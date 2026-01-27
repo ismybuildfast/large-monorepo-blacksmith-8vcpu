@@ -1,19 +1,22 @@
 name: Build and Deploy
 
 on:
+  workflow_dispatch:
   push:
     branches: [main]
 
 jobs:
   build-and-deploy:
-    runs-on: blacksmith-8vcpu-ubuntu-2404
+    runs-on:
+  workflow_dispatch: blacksmith-8vcpu-ubuntu-2404
     steps:
       - uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: useblacksmith/setup-node@v5
         with:
-          node-version: '20'
+          node-version:
+  workflow_dispatch: '20'
 
       - name: Install Vercel CLI
         run: npm i -g vercel
