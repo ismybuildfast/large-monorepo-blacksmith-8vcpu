@@ -53,6 +53,9 @@ jobs:
           }
           MARKER
 
+      - name: Clean previous build output
+        run: rm -rf .vercel/output .next
+
       - name: Record cold build start
         run: echo "$(date +%s)" > /tmp/build_start
 
